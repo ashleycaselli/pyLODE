@@ -115,15 +115,9 @@ match exactly the file ``examples/minimal.html``.
 
 * as a docker container
 
-build the docker image
 ::
-   docker build -t pylode:latest .
 
-copy the example directory, mount it to the countainer and run cli.py in the container
-::
-   docker  run  --mount 'type=bind,src=<ttl_directory>,target=/app/pylode/data' pylode:latest  python3.10 pylode/cli.py data/<ttl_file> -o data/<html_file>
-
-   Note: <ttl_directory> must be absolute 
+    docker run -v ${PWD}:/app/pylode/data ghcr.io/ashleycaselli/pylode:latest python3.10 pylode/cli.py /app/pylode/data/<ttl_file> -o /app/pylode/data/<html_file>
 
 Module Use
 ^^^^^^^^^^
