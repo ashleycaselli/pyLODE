@@ -2,11 +2,11 @@ name: Docker Image CI
 
 on:
   push:
-    branches: [ 2.x ]
+    branches: [ master ]
     paths-ignore:
       - 'CHANGELOG.md'
   pull_request:
-    branches: [ 2.x ]
+    branches: [ master ]
 
 env:
   REGISTRY: ghcr.io
